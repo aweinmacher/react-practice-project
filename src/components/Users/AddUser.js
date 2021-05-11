@@ -4,7 +4,7 @@ import Button from "../UI/Button";
 
 import classes from "./AddUser.module.css";
 
-const AddUser = () => {
+const AddUser = (props) => {
   const [userName, setUserName] = useState("");
   const [age, setAge] = useState("");
 
@@ -17,7 +17,7 @@ const AddUser = () => {
     if (+age < 1) return console.log("low age");
 
     // do main stuff
-    console.log(userName, age);
+    props.onAddUser(userName, age);
 
     // reset form
     setUserName("");
